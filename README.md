@@ -27,7 +27,19 @@ git clone https://github.com/mbuyco/docker-gh.git \
 Link bin directory to your PATH for easy access:
 
 ```sh
-sudo ln -s "$(pwd)/bin" /usr/local/bin/docker-gh"
+sudo ln -s "$(pwd)/bin" /usr/local/bin/docker-gh
+```
+
+Or use alias, in bash:
+
+```sh
+echo 'alias docker-gh="$(pwd)/bin/docker-gh"' >> ~/.bashrc
+```
+
+In zsh:
+
+```sh
+echo 'alias docker-gh="$(pwd)/bin/docker-gh"' >> ~/.zshrc
 ```
 
 Restart your terminal and run:

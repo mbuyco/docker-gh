@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Use current directory as working directory inside container
+WORKDIR=$(pwd)
+
+# Run gh command inside Docker container
+docker run --rm -it \
+  -v "$WORKDIR":/work \
+  -v "$HOME/.config/gh":/root/.config/gh \
+  -v "$HOME/.local/share/gh":/root/.local/share/gh \
+  -v "$HOME/.ssh":/root/.ssh \
+  -v "$HOME/.gitconfig":/root/.gitconfig \
+  -e GITHUB_TOKEN="$GITHUB_TOKEN" \
+  -w /work \
+  gh-cli "$@"
